@@ -70,6 +70,12 @@ class AuthenticationController extends Controller {
                 exit();
             }
 
+            if($oldPassword !== $_SESSION['currentUser']["Password"]) {
+                $_SESSION['error-password'] = "Mật khẩu không đúng";
+                header("Location: /change-password");
+                exit();
+            }
+
             $result = $this->employeeModel->changePassword($email, $oldPassword, $password);
             
             if ($result === false) {
