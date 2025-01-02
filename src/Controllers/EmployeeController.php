@@ -63,12 +63,12 @@ class EmployeeController extends Controller
     private function processForm(){
             // Retrieve form data
             $employeeName = $_POST['employeeName'];
-            $isWoking = $_POST['isWoking'];
+            $isWorking = $_POST['isWorking'];
             $email = $_POST['email'];
             $address = $_POST['address'];
             $province = $_POST['province'];
 
-            if(!$email || !$isWoking || !$employeeName || !$address || !$province) {
+            if(!$email || !$isWorking || !$employeeName || !$address || !$province) {
                 $error = 'Vui lòng điền đầy đủ thông tin';
                 $pageTitle = 'Thêm mới nhân viên';
                 return $this->render('employees\add', [
@@ -79,7 +79,7 @@ class EmployeeController extends Controller
             }
 
             // Call the model to create a new employee
-            $employee = $this->employeeModel->createEmployee($employeeName, $email, $address, $province, $isWoking);
+            $employee = $this->employeeModel->createEmployee($employeeName, $email, $address, $province, $isWorking);
 
             if ($employee) {
                 // Redirect to the employee list page or show a success message
@@ -116,14 +116,14 @@ class EmployeeController extends Controller
         // if (empty($_SESSION['currentEmployee'])) return header("Location: ../employee/signin");
         // Retrieve form data
         $employeeName = $_POST['employeeName'];
-        $isWoking = $_POST['isWoking'];
+        $isWorking = $_POST['isWorking'];
         $email = $_POST['email'];
         $address = $_POST['address'];
         $province = $_POST['province'];
        
         
         // Call the model to update the employee
-        $employee = $this->employeeModel->updateEmployee($employeeId, $employeeName, $email, $address, $province, $isWoking);
+        $employee = $this->employeeModel->updateEmployee($employeeId, $employeeName, $email, $address, $province, $isWorking);
 
         if ($employee) {
             // Redirect to the employee list page or show a success message

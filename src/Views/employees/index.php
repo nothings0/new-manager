@@ -31,9 +31,9 @@
                 <td><?= htmlspecialchars($employee["Email"], ENT_QUOTES, 'UTF-8'); ?></td>
                 <td><?= htmlspecialchars($employee["Province"], ENT_QUOTES, 'UTF-8'); ?></td>
                 <td>
-                    <?= $employee["IsWorking"] == 1 
-                        ? '<span class="badge bg-danger">Đã khóa</span>' 
-                        : '<span class="badge bg-success">Hoạt động</span>'; 
+                    <?= $employee["IsWorking"] == 1
+                        ? '<span class="badge bg-success">Hoạt động</span>'
+                        : '<span class="badge bg-danger">Đã khóa</span>' 
                     ?>
                 </td>
                 <td>

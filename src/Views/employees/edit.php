@@ -27,7 +27,7 @@
         </div>
         <div class="mb-3">
             <label class="form-label" for="">Trạng thái</label>
-            <select name="isLocked" class="form-select">
+            <select name="isWorking" class="form-select">
                 <option value="0" <?= $employee['IsWorking'] == 0 ? 'selected' : ''; ?>>Đã khóa</option>
                 <option value="1" <?= $employee['IsWorking'] == 1 ? 'selected' : ''; ?>>Hoạt động</option>
             </select>
